@@ -1,0 +1,20 @@
+#times {
+    color: darkcyan;
+    font-size: 40px;
+}
+
+.gremio {
+    color: blue;
+}
+
+.juventude{
+    color: green;
+}
+
+p.gremio {
+    color: lightskyblue;
+}
+
+p.juventude {
+    color: lightgreen;
+}

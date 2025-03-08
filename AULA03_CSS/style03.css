@@ -1,0 +1,45 @@
+body {
+    background-image: url(./suarez_gremio.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+    opacity: 1; 
+    transition: opacity 1s ease-in-out; /
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1 {
+    background-color: lightcyan;
+    border-radius: 10px;
+    border-width: 5PX 10PX 15PX 20PX;
+    border-color: black;
+    border-style: solid;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: capitalize;    
+    width: 98%;
+    padding: 5PX 10PX 15PX 20PX;
+    font-size: 40px;
+      color: #000;
+      transition: opacity 2s ease-in-out;
+}
+h1:hover {
+    opacity: 0;
+}
+
+p {
+    background-color: aliceblue;
+    border: 2px black solid;
+    border-radius: 10px;
+    padding: 5PX 10PX 15PX 20PX;
+    margin: 50px 20px 30px 40px;
+    text-align: justify;
+    text-indent: 20px;
+    line-height: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
