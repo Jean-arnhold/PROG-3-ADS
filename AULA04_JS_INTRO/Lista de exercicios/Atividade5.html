@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function enviarForm(event) {
+            event.preventDefault();
+            let nome = document.getElementById('nome').value;
+            let turno = document.getElementById('turno').value;
+            let saudacao = '';
+
+            if (turno === 'Manhã') {
+                saudacao = 'Bom dia';
+            } else if (turno === 'Tarde') {
+                saudacao = 'Boa tarde';
+            } else {
+                saudacao = 'Boa noite';
+            }
+
+            document.getElementById('saudacao').innerText = `${saudacao}, ${nome}!`;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <form onsubmit="enviarForm(event)">
+            <input type="text" name="nome" id="nome" placeholder="Nome">
+            <label for="">Turno:</label>    
+            <select name="turno" id="turno">
+                 <option value="Manhã">Manhã</option>
+                 <option value="Tarde">Tarde</option>
+                 <option value="Noite">Noite</option>
+            </select>
+            <button type="submit">Enviar</button>
+
+            <h1 id="saudacao"></h1>
+
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let array1 = [1, 5, 3, 5];
+        console.log(array1);
+
+        function alterarArray(array) {
+            array[0] = "um";
+            array[1] = "cinco";
+            array[2] = "três";
+            array[3] = "cinco";
+            return array;
+        }
+
+        function escreverArray(array, elementId) {
+            document.getElementById(elementId).innerText = array.join(', ');
+        }
+
+        window.onload = function() {
+            escreverArray(array1, 'arrayOriginal');
+            let arrayAlterado = alterarArray(array1);
+            console.log(arrayAlterado);
+            escreverArray(arrayAlterado, 'arrayAlterado');
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>
+                <h1>Alterar Array</h1>
+                <p>1. Crie um array com 4 elementos numéricos e imprima o array na tela.</p>
+                <p>2. Crie uma função que receba um array como parâmetro e altere o valor de cada elemento para uma string com o valor correspondente em português. Por exemplo, se o array for [1,5,3,5], então a função deve alterar o array para ["um","cinco","três","cinco"].</p>
+                <p>3. Imprima o array na tela</p>
+                <p>Array Original: <span id="arrayOriginal"></span></p>
+                <p>Array Alterado: <span id="arrayAlterado"></span></p>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
