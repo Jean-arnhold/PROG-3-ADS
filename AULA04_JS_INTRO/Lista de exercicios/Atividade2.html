@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão de Celsius para Fahrenheit</title>
+</head>
+<body>
+    <h1>Tabela de Conversão de Celsius para Fahrenheit</h1>
+    <table style="border: 1px solid black;">
+        <thead>
+            <tr>
+                <th>Graus Celsius (ºC)</th>
+                <th>Graus Fahrenheit (ºF)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+                for (let celsius = 0; celsius <= 100; celsius++) {
+                    let fahrenheit = (celsius * 1.8) + 32;
+                    document.write('<tr><td>' + celsius + '</td><td>' + fahrenheit.toFixed(2) + '</td></tr>');
+                }
+            </script>
+        </tbody>
+    </table>
+</body>
+</html>
