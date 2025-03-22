@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercício 3</h1>
+    <p>Crie uma página com um formulário contendo dois inputs numéricos a e b. Logo após,
+        coloque cinco inputs do tipo radio com seleção mutuamente exclusiva, os quais
+        representam as seguintes operações: soma, subtração, multiplicação, divisão e
+        potenciação. Ao clicar no botão, a operação selecionada deve ser realizada com a e b, e o
+        resultado deve ser impresso em um parágrafo (tag p) logo após o botão, juntamente com a
+        operação que a originou. Por exemplo, se o usuário informar a=4 e b=2, e selecionar soma,
+        deve ser impresso: 4+2=6</p>
+
+    <form id="form">
+        <label for="a">A</label>
+        <input type="number" name="a" id="a" required>
+        <label for="b">B</label>
+        <input type="number" name="b" id="b" required>
+        <br>
+        <input type="radio" name="operacao" id="soma" value="soma">
+        <label for="soma">Soma</label>
+        <br>
+        <input type="radio" name="operacao" id="subtracao" value="subtracao">
+        <label for="subtracao">Subtração</label>
+        <br>
+        <input type="radio" name="operacao" id="multiplicacao" value="multiplicacao">
+        <label for="multiplicacao">Multiplicação</label>
+        <br>
+        <input type="radio" name="operacao" id="divisao" value="divisao">
+        <label for="divisao">Divisão</label>
+        <br>
+        <input type="radio" name="operacao" id="potenciacao" value="potenciacao">
+        <label for="potenciacao">Potenciação</label>
+        <br>
+        <button type="submit">Calcular</button>
+
+        <p id="result"></p>
+    </form>
+
+    <script>
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let a = parseInt(document.getElementById('a').value);
+            let b = parseInt(document.getElementById('b').value);
+            let operacao = document.querySelector('input[name="operacao"]:checked').value;
+            let p = document.getElementById('result');
+            p.innerHTML = '';
+            let resultado;
+            let operacaoSimbolo;
+            switch (operacao) {
+                case 'soma':
+                    resultado = a + b;
+                    operacaoSimbolo = '+';
+                    break;
+                case 'subtracao':
+                    resultado = a - b;
+                    operacaoSimbolo = '-';
+                    break;
+                case 'multiplicacao':
+                    resultado = a * b;
+                    operacaoSimbolo = '*';
+                    break;
+                case 'divisao':
+                    resultado = a / b;
+                    operacaoSimbolo = '/';
+                    break;
+                case 'potenciacao':
+                    resultado = Math.pow(a, b);
+                    operacaoSimbolo = '^';
+                    break;
+            }
+            p.textContent = `${a} ${operacaoSimbolo} ${b} = ${resultado}`;
+        });
+    </script>
+</body>
+</html>

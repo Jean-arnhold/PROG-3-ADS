@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercicio 2</h1>
+    <p>2. Crie uma página contendo uma textarea onde o usuário poderá digitar um comentário.
+        Inclua dois inputs do tipo radio com seleção mutuamente exclusiva: as opções são
+        importante e não importante. Caso o usuário escolha inserir um comentário importante, o
+        texto deve ser escrito na cor vermelho; caso contrário, o texto deve ser inserido na cor azul.
+        Os comentários devem ser parágrafos (tag p) inseridos após o botão utilizado para realizar
+        a inserção.
+        </p>
+
+    <form id="form">
+        <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea>
+        <br>
+        <input type="radio" name="importancia" id="importante" value="importante">
+        <label for="importante">Importante</label>
+        <br>
+        <input type="radio" name="importancia" id="nao-importante" value="nao-importante">
+        <label for="nao-importante">Não Importante</label>
+        <br>
+        <button type="submit">Enviar</button>
+
+        <div id="comentarios"></div>
+    </form>
+
+    <script>
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let comentario = document.getElementById('comentario').value;
+            let importancia = document.querySelector('input[name="importancia"]:checked').value;
+            let p = document.createElement('p');
+            p.textContent = comentario;
+            if (importancia === 'importante') {
+                p.style.color = 'red';
+            } else {
+                p.style.color = 'blue';
+            }
+            document.getElementById('comentarios').appendChild(p);
+            }
+        );
+    </script>
+</body>
+</html>

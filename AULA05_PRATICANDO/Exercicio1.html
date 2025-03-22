@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EXERCICIO 1</h1>
+    <p>1. Construa uma página HTML com um formulário contendo dois inputs numéricos a e b.
+        Ao clicar em um botão, devem ser impressos em uma lista não ordenada (tag ul) todos os
+        números pares entre os numeros a e b.
+        </p>
+    
+    <form id="form">
+        <label for="number" id="A">A</label>
+        <input type="number" name="numeros" id="numeros" required>
+        <label for="number" id="B">B</label>
+        <input type="number" name="numeros" id="numeros" required>
+        <button type="submit">Calcular</button>
+    </form>
+
+    <ul id="result"></ul>
+    
+    <script>
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let a = parseInt(document.getElementsByName('numeros')[0].value);
+            let b = parseInt(document.getElementsByName('numeros')[1].value);
+            let ul = document.getElementById('result');
+            ul.innerHTML = '';
+            for (let i = a + 1; i <= b - 1; i++) {
+                if (i % 2 === 0) {
+                    let li = document.createElement('li');
+                    li.textContent = i;
+                    ul.appendChild(li);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
