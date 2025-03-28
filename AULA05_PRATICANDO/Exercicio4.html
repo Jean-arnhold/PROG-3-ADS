@@ -1,45 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manipulação de Array</title>
+    <title>Exercicio 4</title>
+    <script src="exercicio4.js"></script>
+    <style>
+        div {
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
-    <input type="text" id="textInput" placeholder="Digite um texto">
-    <input type="number" id="indexInput" placeholder="Posição" min="0">
-    <button onclick="addToArray()">Adicionar</button>
-    <p id="message"></p>
-    <ol id="list"></ol>
+    <h1>Exercicio 4</h1>
+    <div>
+        <label for="t">Texto:</label>
+        <input type="text" name="t" id="t">
+    </div>
+    <div>
+        <label for="p">Posição:</label>
+        <input type="number" name="p" id="p">
+    </div>
+    <div>
+        <button id="inserir" onclick="inserir()">Inserir</button>
+    </div>
+    <div id="erro">
 
-    <script>
-        let arr = [];
+    </div>
+    <div>
+        <ul id="lista">
 
-        function addToArray() {
-            let text = document.getElementById("textInput").value;
-            let index = parseInt(document.getElementById("indexInput").value);
-            let message = document.getElementById("message");
-            let list = document.getElementById("list");
-            
-            if (index < 0 || index > arr.length) {
-                message.textContent = "Posição inválida!";
-                return;
-            }
-            
-            arr.splice(index, 0, text);
-            message.textContent = "";
-            renderList();
-        }
+        </ul>
+    </div>
 
-        function renderList() {
-            let list = document.getElementById("list");
-            list.innerHTML = "";
-            arr.forEach(item => {
-                let li = document.createElement("li");
-                li.textContent = item;
-                list.appendChild(li);
-            });
-        }
-    </script>
 </body>
 </html>

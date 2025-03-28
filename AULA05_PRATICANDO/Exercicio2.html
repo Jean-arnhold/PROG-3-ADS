@@ -2,48 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exercicio 2</title>
+    <script src="exercicio2.js"></script>
+    <style>
+        div {
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>Exercicio 2</h1>
-    <p>2. Crie uma página contendo uma textarea onde o usuário poderá digitar um comentário.
-        Inclua dois inputs do tipo radio com seleção mutuamente exclusiva: as opções são
-        importante e não importante. Caso o usuário escolha inserir um comentário importante, o
-        texto deve ser escrito na cor vermelho; caso contrário, o texto deve ser inserido na cor azul.
-        Os comentários devem ser parágrafos (tag p) inseridos após o botão utilizado para realizar
-        a inserção.
-        </p>
-
-    <form id="form">
-        <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea>
-        <br>
-        <input type="radio" name="importancia" id="importante" value="importante">
+    <div>
+        <label for="c">Comentário:</label><br>
+        <textarea name="c" id="c" cols="30" rows="10"></textarea>
+    </div>
+    <div>
+        <input type="radio" value="importante" id="importante" name="importante" checked>
         <label for="importante">Importante</label>
-        <br>
-        <input type="radio" name="importancia" id="nao-importante" value="nao-importante">
+    </div>
+    <div>
+        <input type="radio" value="nao-importante" id="nao-importante" name="importante">
         <label for="nao-importante">Não Importante</label>
-        <br>
-        <button type="submit">Enviar</button>
-
-        <div id="comentarios"></div>
-    </form>
-
-    <script>
-        document.getElementById('form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            let comentario = document.getElementById('comentario').value;
-            let importancia = document.querySelector('input[name="importancia"]:checked').value;
-            let p = document.createElement('p');
-            p.textContent = comentario;
-            if (importancia === 'importante') {
-                p.style.color = 'red';
-            } else {
-                p.style.color = 'blue';
-            }
-            document.getElementById('comentarios').appendChild(p);
-            }
-        );
-    </script>
+    </div>
+    <div>
+        <button id="escrever" onclick="escrever()">Escrever</button>
+    </div>
+    <div id="resultado">
+       
+    </div>
 </body>
 </html>
