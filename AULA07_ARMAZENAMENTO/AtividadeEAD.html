@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<!-- Crie uma página HTML contendo um formulário onde o usuário informe o seu nome, sobrenome, endereço (rua, número, complemento, CEP e cidade) e se quer ou não receber emails (checkbox).
+Coloque três botões na página: um para salvar os dados em Cookies, outro para salvar os dados em Session Storage e o último para salvar os dados em Local Storage. Implemente 3 funções em JS, uma para cada botão, sendo que as funções devem executar as respectivas tarefas (salvar os dados em Cookies, Session Storage e Local Storage, respectivamente).
+ -->
+<body>
+    
+    
+    <form action="">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" ><br><br>
+
+        <label for="sobrenome">Sobrenome</label>
+        <input type="text" id="sobrenome" name="sobrenome"><br><br>
+
+        <label for="rua">Rua</label>
+        <input type="text" id="rua" name="rua"><br><br>
+
+        <label for="numero">Número</label>
+        <input type="number" id="numero" name="numero"><br><br>
+
+        <label for="complemento">Complemento</label>
+        <input type="text" id="complemento" name="complemento"><br><br>
+
+        <label for="cep">CEP</label>
+        <input type="number" id="cep" name="cep"><br><br>
+
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" name="cidade"><br><br>
+
+        <label for="receberEmail">Receber emails?</label>
+        <input type="checkbox" id="receberEmail" name="receberEmail"><br><br>
+
+        <button type="button" onclick="salvarCookies()">Salvar em Cookies</button>
+        <button type="button" onclick="salvarSessionStorage()">Salvar em Session Storage</button>
+        <button type="button" onclick="salvarLocalStorage()">Salvar em Local Storage</button>
+
+
+    </form>
+
+    <script>
+        
+        function obterDados() {
+            return {
+              nome: document.getElementById("nome").value,
+              sobrenome: document.getElementById("sobrenome").value,
+              rua: document.getElementById("rua").value,
+              numero: document.getElementById("numero").value,
+              complemento: document.getElementById("complemento").value,
+              cep: document.getElementById("cep").value,
+              cidade: document.getElementById("cidade").value,
+              receberEmails: document.getElementById("receberEmail").checked
+            };
+          }
+        
+
+        function salvarCookies() {
+            
+            var dados = obterDados();
+            var data = new Date();
+            data.setTime(data.getTime() + (1*24*60*60*1000)); // 1 dia
+            var expires = "expires=" + data.toUTCString();
+            
+            document.cookie = "nome=" + dados.nome + ";" + expires + ";path=/";
+            document.cookie = "sobrenome=" + dados.sobrenome + ";" + expires + ";path=/";
+            document.cookie = "rua=" + dados.rua + ";" + expires + ";path=/";
+            document.cookie = "numero=" + dados.numero + ";" + expires + ";path=/";
+            document.cookie = "complemento=" + dados.complemento + ";" + expires + ";path=/";
+            document.cookie = "cep=" + dados.cep + ";" + expires + ";path=/";
+            document.cookie = "cidade=" + dados.cidade + ";" + expires + ";path=/";
+            document.cookie = "receberEmails=" + dados.receberEmails + ";" + expires + ";path=/";
+
+            alert("Dados salvos em Cookies!");
+            console.log(document.cookie);
+
+        }
+
+        function salvarLocalStorage() {
+
+            var dados = obterDados();
+            localStorage.setItem("nome", dados.nome);
+            localStorage.setItem("sobrenome", dados.sobrenome);
+            localStorage.setItem("rua", dados.rua);
+            localStorage.setItem("numero", dados.numero);
+            localStorage.setItem("complemento", dados.complemento);
+            localStorage.setItem("cep", dados.cep);
+            localStorage.setItem("cidade", dados.cidade);
+            localStorage.setItem("receberEmails", dados.receberEmails);
+
+            alert("Dados salvos em Local Storage!");
+           
+
+        }
+        
+        function salvarSessionStorage() {
+            
+            var dados = obterDados();
+            sessionStorage.setItem("nome", dados.nome);
+            sessionStorage.setItem("sobrenome", dados.sobrenome);
+            sessionStorage.setItem("rua", dados.rua);
+            sessionStorage.setItem("numero", dados.numero);
+            sessionStorage.setItem("complemento", dados.complemento);
+            sessionStorage.setItem("cep", dados.cep);
+            sessionStorage.setItem("cidade", dados.cidade);
+            sessionStorage.setItem("receberEmails", dados.receberEmails);
+
+            alert("Dados salvos em Session Storage!");
+
+        }
+    </script>
+</body>
+</html>
