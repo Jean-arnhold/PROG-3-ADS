@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+
+        label {
+            margin: 5px 0;
+        }
+
+        table {
+            width: 300px;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border: 2px solid black;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>CADASTRO DE CLIENTES</h1>
+    <br>
+    <h2>Exercício 1</h2>
+    <div id="formulario">
+            <label for="nome">Nome completo</label>
+            <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
+            
+            <label for="cpf">CPF</label>
+            <input type="text" name="cpf" id="cpf" placeholder="CPF" required>
+            
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" placeholder="E-mail" required>
+            
+            <label for="telefone">Telefone</label>
+            <input type="text" name="telefone" id="telefone" placeholder="Telefone" required>
+            
+            <button type="submit" onclick="cadastrar()">Cadastrar</button>
+    </div>
+
+    <div>
+        <table id="tabela">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                </tr>
+            </thead>
+            <tbody id="corpoTabela">
+                <!-- Os dados serão inseridos aqui pelo JavaScript -->
+            </tbody>
+
+        </table>
+    </div>
+
+    <script src="Atividade1.js"></script>
+</body>
+</html>
