@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 300px;
+        }
+
+        div.resultado {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: red;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: auto;
+            max-width: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>OBJETOS</h1>
+        <h2>Exercício 3</h2>
+        <label><input type="checkbox" id="checkNome"> Nome</label>
+        <input type="text" id="nomeTime" placeholder="Digite o nome do time">
+    
+        <label><input type="checkbox" id="checkTreinador"> Treinador</label>
+        <input type="text" id="nomeTreinador" placeholder="Digite o nome do treinador">
+    
+        <label><input type="checkbox" id="checkEstadio"> Nome do estádio</label>
+        <input type="text" id="estadio" placeholder="Digite o nome do estádio">
+    
+        <label><input type="checkbox" id="checkCidade"> Cidade</label>
+        <input type="text" id="cidade" placeholder="Digite a cidade">
+    
+        <button onclick="criarObjeto()">Criar Objeto</button>
+    </div>
+
+    <div class="resultado" id="saida"></div>
+
+    <script>
+        const objetos = [];
+        function criarObjeto() {
+
+            const nomeTime = document.getElementById("nomeTime").value;
+            const nomeTreinador = document.getElementById("nomeTreinador").value;
+            const estadio = document.getElementById("estadio").value;
+            const cidade = document.getElementById("cidade").value;
+
+            const objeto = {};
+
+            if (document.getElementById("checkNome").checked) {
+                objeto.nomeTime = nomeTime;
+            }
+            if (document.getElementById("checkTreinador").checked) {
+                objeto.nomeTreinador = nomeTreinador;
+            }
+            if (document.getElementById("checkEstadio").checked) {
+                objeto.estadio = estadio;
+            }
+            if (document.getElementById("checkCidade").checked) {
+                objeto.cidade = cidade;
+            }
+
+            objetos.push(objeto);
+            console.log(objeto); 
+
+
+            texto = objetos.map((o, i) => {
+                let partes = [];
+                if (o.nomeTime) partes.push(`Nome do time: ${o.nomeTime}`);
+                if (o.nomeTreinador) partes.push(`Nome do treinador: ${o.nomeTreinador}`);
+                if (o.estadio) partes.push(`Nome do estádio: ${o.estadio}`);
+                if (o.cidade) partes.push(`Cidade: ${o.cidade}`);
+                return `Objeto ${i + 1}: ${partes.length ? partes.join(", ") : "(vazio)"}`;
+            }).join("<br>");
+
+            document.getElementById("saida").innerHTML = texto;
+
+        }
+    </script>
+</body>
+
+</html>
