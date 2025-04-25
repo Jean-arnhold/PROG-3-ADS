@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .entrada {
+            padding: 5px;
+        }
+
+        .botao {
+            padding: 30px 80px;
+        }
+
+        .saida {
+            color: red;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+
+    <script src="ex3.js" defer></script>
+    
+</head>
+<body>
+    <h1>Objetos JS</h1>
+    <h2>Exercício 3</h2>
+
+    <div class="entrada">
+        <input type="checkbox" name="c1" id="c1">
+        <label for="prop1">Nome do Time</label>
+        <input type="text" name="prop1" id="prop1">
+    </div>
+
+    <div class="entrada">
+        <input type="checkbox" name="c2" id="c2">
+        <label for="prop2">Treinador</label>
+        <input type="text" name="prop2" id="prop2">
+    </div>
+
+    <div class="entrada">
+        <input type="checkbox" name="c3" id="c3">
+        <label for="prop3">Nome do Estádio</label>
+        <input type="text" name="prop3" id="prop3">
+    </div>
+    
+    <div class="entrada">
+        <input type="checkbox" name="c4" id="c4">
+        <label for="prop4">Cidade</label>
+        <input type="text" name="prop4" id="prop4">
+    </div>
+
+  
+    
+
+    <div class="botao">
+        <input type="button" value="Criar Objeto" onclick="imprime()">
+    </div>
+
+    <ul class="saida" id="resultado">
+
+    </ul>
+</body>
+</html>
