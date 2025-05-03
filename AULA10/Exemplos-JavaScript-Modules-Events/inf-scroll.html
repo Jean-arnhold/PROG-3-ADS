@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Infinite Scroll</title>
+    <script>
+        let count = 0;
+        const extra = 150;
+     
+        function scrollHandler() {
+            const distanceToBottom = document.body.getBoundingClientRect().bottom;
+            
+            if (distanceToBottom < document.documentElement.clientHeight + extra) {
+                const newElement = document.createElement('div');
+                newElement.innerHTML = `<p>Scroll Infinito - Adição #${++count}</p>`;
+                document.body.append(newElement);
+            }
+        }
+      
+        window.addEventListener('scroll', scrollHandler);
+    </script>
+</head>
+<body>
+    <p style="margin-top: 500px;">Role para o fim da página!</p>
+    <p style="margin-top: 500px;">Role para o fim da página!</p>
+    <p style="margin-top: 500px;">Role para o fim da página!</p>
+</body>
+</html>
