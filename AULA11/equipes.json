@@ -1,0 +1,64 @@
+{
+    "equipes": [
+        {
+            "nome": "Flamengo",
+            "estado": "RJ",
+            "rankingFifa": 10,
+            "treinador": {
+                "nome": "Filipe",
+                "sobrenome": "Luis",
+                "nacionalidade": "Brasileiro"
+            }
+        },
+        {
+            "nome": "Grêmio",
+            "estado": "RS",
+            "rankingFifa": 1,
+            "treinador": {
+                "nome": "Mano",
+                "sobrenome": "Menezes",
+                "nacionalidade": "Brasileiro"
+            }
+        },
+        {
+            "nome": "Internacional",
+            "estado": "RS",
+            "rankingFifa": 200,
+            "treinador": {
+                "nome": "Roger",
+                "sobrenome": "Machado",
+                "nacionalidade": "Brasileiro"
+            }
+        },
+        {
+            "nome": "São Paulo",
+            "estado": "SP", 
+            "rankingFifa": 10, 
+            "treinador": {
+                "nome": "Luiz",
+                "sobrenome": "Zubeldia",
+                "nacionalidade": "Argentino"
+            }
+        },
+        {
+            "nome": "Filtradores",
+            "estado": "RS",
+            "rankingFifa": 506,
+            "treinador": {
+                "nome": "Matcho",
+                "sobrenome": "Troes",
+                "nacionalidade": "Brasileiro"
+            }
+        },
+        {
+            "nome": "5 de Julho",
+            "estado": "RS",
+            "rankingFifa": 1000,
+            "treinador": {
+                "nome": "Felipe",
+                "sobrenome": "Bonalumes",
+                "nacionalidade": "Voltando a ser feliz"
+            }
+        }
+    ]
+}

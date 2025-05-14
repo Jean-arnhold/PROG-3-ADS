@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- 
+        Código criado no que chamamos Global Namespace (default).
+        Variável var x = 'Ola' pode ser vista dentro do objeto window.x
+        Problema é que a variável fica disponível de outros escopos.
+        Veja colocando console.log(window.x);
+
+        Antigamente (antes do let), programadores JS começaram a
+        criar os códigos dentro de "Self Executed Functions" 
+        (IIFE Function - Immediately Invoked Function Expression,
+         a JS function that runs as soon as it is defined).
+
+
+        Exemplo:
+        
+        const f = () => {
+            var x = 'Ola';
+            console.log(x);
+        };
+
+        Evoluindo:
+        () => {
+            var x = 'Ola';
+            console.log(x);
+        }();
+
+        Agora x não está mais disponível no contexto global
+        console.log(window.x); // undefined
+
+        Isso resolve o problema do escopo, mas não é nada flexivel pois
+        limita (impossibilita) o compartilhamento de dados/estruturas 
+        entre diferentes scripts JS.
+    -->
+    <script src="Cachorro.js"></script>
+    <script src="Pessoa.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <h1>Exemplo</h1>
+    <p>Veja o resultado no Console.</p>
+</body>
+</html>
