@@ -1,4 +1,5 @@
 import express from 'express';
+const app = express();
 import routes from './routes.js';
 import cors from 'cors';
 
